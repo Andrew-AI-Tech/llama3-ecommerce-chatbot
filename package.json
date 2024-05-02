@@ -1,0 +1,18 @@
+{
+    "name": "web-scraper-bot",
+    "version": "1.0.0",
+    "description": "A Node.js project for integrating Puppeteer automation to take screenshot off a webpage.",
+    "main": "puppeteer_script.js",
+    "scripts": {
+        "start": "node screensho.js"
+    },
+    "dependencies": {
+        "express": "^4.19.2",
+        "puppeteer": "^22.7.1",
+        "puppeteer-extra": "^3.3.6",
+        "puppeteer-extra-plugin-adblocker": "^2.13.6",
+        "puppeteer-extra-plugin-stealth": "^2.11.2"
+    },
+    "author": "Andrew-AI-Tech",
+    "license": "ISC"
+}
