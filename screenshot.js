@@ -8,9 +8,6 @@ puppeteer.use(StealthPlugin())
 const AdblockerPlugin = require('puppeteer-extra-plugin-adblocker')
 puppeteer.use(AdblockerPlugin({ blockTrackers: true }))
 
-const url = process.argv[2]; // Get the URL from command-line arguments
-const timeout = 5000; // Default timeout
-
 // Function to extract and sanitize the page name from the URL
 const getPageName = (url) => {
     // Extract the last segment from the URL path
@@ -20,6 +17,8 @@ const getPageName = (url) => {
     // Replace any remaining non-alphanumeric characters with dashes
     return pageName.replace(/[^\w.-]/g, '-');
 };
+
+const app = express();
 
 app.get("/screenshot", async (req, res) => {
     const url = req.query.url;
