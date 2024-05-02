@@ -11,11 +11,6 @@ puppeteer.use(AdblockerPlugin({ blockTrackers: true }))
 const url = process.argv[2]; // Get the URL from command-line arguments
 const timeout = 5000; // Default timeout
 
-if (!url) {
-    console.error("No URL provided.");
-    process.exit(1); // Exit if no URL is given
-}
-
 // Function to extract and sanitize the page name from the URL
 const getPageName = (url) => {
     // Extract the last segment from the URL path
@@ -54,4 +49,8 @@ app.get("/screenshot", async (req, res) => {
     } catch (error) {
         res.status(500).send('Error: ${error.message}');
     }
+});
+
+app.listen(3000, () => {
+    console.log("Server is running on port 3000");
 });
